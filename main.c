@@ -4,11 +4,12 @@
 
 int main(){
 #ifdef DEBUG 
-	printf("디버그용");
+        printf("디버그용");
 #endif
+    s s[20];
     int no;
     int count=0;
-    s s[20];
+    count= loadData(s);
 while(1){
      menu();
      printf("=> 원하는 메뉴는? ");
@@ -22,8 +23,9 @@ while(1){
          }
          else break;
      }
+     else if(no==5) findname(s, count);
+     else if(no==6) save(s,count);
      else break;
     }
     return 0;
 }
-
