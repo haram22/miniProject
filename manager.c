@@ -27,16 +27,19 @@ void edit(s *s, int count){
 #ifdef DEBUG
         printf("다음은 디버그용 입니다.");
 #endif
+    int no;
+    printf("수정할 상품의 번호는? ");
+    scanf("%d", &no);
     getchar();
     printf("상품명은? ");
-    fgets(s[count]->name, 100, stdin);
-    s[count]->name[strlen(s[count]->name) -1]= '\0';
+    fgets(s[no-1]->name, 100, stdin);
+    s[no-1]->name[strlen(s[no-1]->name) -1]= '\0';
     printf("가격은? ");
-    scanf("%d", &s[count]->price);
+    scanf("%d", &s[no-1]->price);
     printf("양은 ?");
-    scanf("%d", &s[count]->amount);
+    scanf("%d", &s[no-1]->amount);
     printf("주소는? ");
-    scanf("%s", s[count]->address);
+    scanf("%s", s[no-1]->address);
     printf("success!!\n\n");
 }
 
@@ -119,10 +122,10 @@ if (fp!=NULL){
  for(i=0;i<100;i++){
    fscanf(fp, "%s", s[i]->name);
    if(feof(fp)) break;
-    fscanf(fp,"%s", &s[i]->name);
+    fscanf(fp,"%s", s[i]->name);
     fscanf(fp,"%d", &s[i]->price);
     fscanf(fp,"%d", &s[i]->amount);
-    fscanf(fp,"%s", &s[i]->address);
+    fscanf(fp,"%s", s[i]->address);
   }
    fclose(fp);
    printf("=> 로딩 성공!\n");
