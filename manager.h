@@ -12,3 +12,8 @@ void edit(s *s, int count);
 int selectNo(s *s);
 int title(s *s, int count);
 int content(s *s, int count);
+int findname(s *s, int count);
+int loadData(s *s);
+void save(s *s, int count);
+
+
