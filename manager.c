@@ -72,6 +72,44 @@ int findname(s *s, int count){
     return 0;
 }
 
+int findaddress(s *s, int count){
+    char find[10];
+    int c=0;
+    printf("검색할 주소? ");
+    scanf("%s",find);
+    printf("\nNo  이름 가격 양 주소\n");
+    printf("=================================\n");
+    for(int i=0;i<count;i++){
+        if(strcmp(find, s[i]->address) == 0) {
+            printf("%d %s %d %d %s\n", i+1, s[i]->name, s[i]->price, s[i]->amount, s[i]->address);
+            c++;
+        }
+        else continue;
+    }
+    printf("\n총 %d개의 주문이 있습니다.\n",c);
+    if(c==0) printf("=> 검색된 데이터 없음!\n");
+    return 0;
+}
+
+int findamount(s *s, int count){
+    int find;
+    int c=0;
+    printf("검색할 양? ");
+    scanf("%d",&find);
+    printf("\nNo  이름 가격 양 주소\n");
+    printf("=================================\n");
+    for(int i=0;i<count;i++){
+        if(find ==s[i]->amount) {
+            printf("%d %s %d %d %s\n", i+1, s[i]->name, s[i]->price, s[i]->amount, s[i]->address);
+            c++;
+        }
+        else continue;
+    }
+    printf("\n총 %d개의 주문이 있습니다.\n",c);
+    if(c==0) printf("=> 검색된 데이터 없음!\n");
+    return 0;
+}
+
 int loadData(s *s){
   int num=0;
   FILE *fp;
