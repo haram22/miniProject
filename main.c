@@ -24,7 +24,9 @@ while(1){
          else break;
      }
      else if(no==5) findname(s, count);
-     else if(no==6) save(s,count);
+     else if(no==6) findaddress(s, count);
+     else if(no==7) findamount(s, count);
+     else if(no==8) save(s,count);
      else break;
     }
     return 0;
