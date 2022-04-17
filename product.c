@@ -6,6 +6,5 @@ void menu(){
     printf("2. 추가\n");
     printf("3. 수정\n");
     printf("4. 삭제\n");
-    printf("5. 종료\n\n");   
+    printf("5. 종료\n\n");
 }
-
